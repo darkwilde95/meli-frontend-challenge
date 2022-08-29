@@ -1,0 +1,26 @@
+@import '../abstracts/variables';
+@import '../components/item_card.module';
+
+$divider-space: $item-card-padding + 1rem;
+
+.items_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+  border-radius: $card-border-radius;
+
+  li {
+    position: relative;
+  }
+
+  li:not(:last-child)::after {
+    position: absolute;
+    content: ' ';
+    bottom: 0;
+    height: 2px;
+    width: calc(100% - #{$divider-space} * 2);
+    background-color: $gray-background;
+    margin: 0 $divider-space;
+  }
+}

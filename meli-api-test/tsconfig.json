@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "declaration": false,
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "noLib": false,
+    "allowJs": true,
+    "noEmit": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@routes": ["routes/index"],
+      "@variables": ["config/variables"],
+      "@mappers/*": ["utils/mappers/*"],
+      "@api": ["config/api_request"]
+    }
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

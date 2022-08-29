@@ -1,0 +1,22 @@
+@import '../themes/meli_theme';
+
+.breadcrumbs {
+  list-style: none;
+  padding: 1.142857rem 0;
+  font-size: map-get($font-sizes, 'base');
+
+  &__item {
+    display: inline-flex;
+    color: $primary-color-text-light;
+
+    span {
+      margin: 0 0.5rem;
+    }
+
+    &--last {
+      display: inline-flex;
+      font-weight: 600;
+      color: $primary-color-text-light-2;
+    }
+  }
+}

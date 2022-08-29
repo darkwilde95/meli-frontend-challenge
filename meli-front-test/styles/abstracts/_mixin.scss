@@ -1,0 +1,11 @@
+@mixin btn-hover($bgcolor) {
+  background-color: $bgcolor;
+  &:hover {
+    cursor: pointer;
+    background-color: mix($bgcolor, #FFFFFF, 80%);
+  }
+}
+
+@mixin max-width-adjust($width) {
+  max-width: calc(#{$width} - 4rem);
+}

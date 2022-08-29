@@ -1,0 +1,41 @@
+// search bar
+$search-bar-height: 4rem;
+
+$button-border-radius: 4px;
+$input-border-radius: 4px;
+$image-border-radius: 4px;
+$card-border-radius: 4px;
+
+// display breakpoints
+$breakpoints: (
+  'x-small': 0,
+  'small': 576px,
+  'medium': 768px,
+  'large-1': 992px,
+  'large-2': 1200px,
+  'large-3': 1400px
+);
+
+// font sizes
+$font-sizes: (
+  'big-1': 46px,
+  'large-2': 28px,
+  'large-1': 24px,
+  'medium-2': 18px,
+  'medium-1': 16px,
+  'base': 14px,
+  'small': 12px
+);
+
+// colors
+$meli-yellow: #FFE600;
+
+$gray-background: #EEEEEE;
+$gray-text-1: #333333;
+$gray-text-2: #666666;
+$gray-text-3: #999999;
+
+$meli-blue: #3483FA;
+
+$white-background: #FFFFFF;
+$white-text: #FFFFFF;

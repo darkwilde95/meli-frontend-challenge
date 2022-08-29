@@ -1,0 +1,36 @@
+@import '../themes/meli_theme';
+@import '../abstracts/variables';
+
+$input-group-height: 2.5rem;
+
+.input_group {
+  height: $input-group-height;
+  width: 100%;
+
+  input {
+    border-top-left-radius: $input-border-radius;
+    border-bottom-left-radius: $input-border-radius;
+    padding: 1rem;
+    font-size: map-get($font-sizes, 'medium-2');
+    height: 100%;
+    width: 100%;
+    color: $primary-color-text;
+
+    &::placeholder {
+      color: $input-placeholder-text;
+    }
+  }
+
+
+  &__icon_right {
+    background-color: $gray-background;
+    height: 100%;
+    width: $input-group-height;
+    cursor: pointer;
+  }
+
+  input + &__icon_right {
+    border-top-right-radius: $input-border-radius;
+    border-bottom-right-radius: $input-border-radius;
+  }
+}

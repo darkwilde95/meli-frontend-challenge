@@ -1,0 +1,83 @@
+@import '../abstracts/variables';
+@import '../themes/meli_theme';
+
+$img-max-width: 680px;
+
+.item_details {
+  width: 100%;
+  padding: 2.285714rem;
+  border-radius: $card-border-radius;
+  background-color: $white-background;
+  margin-bottom: 2rem;
+
+  &__buy_title {
+    width: 100%;
+    @media (max-width: map-get($breakpoints, 'large-1')) {
+      flex-direction: column;
+    }
+  }
+
+  &__picture {
+    width: 680px;
+    flex-shrink: 0;
+  }
+
+  &__description {
+    max-width: $img-max-width;
+    width: 100%;
+  }
+
+  &__description_title {
+    margin-top: 4rem;
+    font-size: map-get($font-sizes, 'large-2');
+    color: $primary-color-text;
+    font-weight: 500;
+  }
+
+  &__description_text {
+    margin-top: 2.285714rem;
+    font-size: map-get($font-sizes, 'medium-1');
+    color: $primary-color-text-light;
+  }
+
+  &__buy_container {
+    flex-grow: 1;
+    margin-left: 2.285714rem;
+    @media (max-width: map-get($breakpoints, 'large-1')) {
+      button {
+        width: 50%;
+      }
+    }
+  }
+
+  &__sold {
+    font-size: map-get($font-sizes, 'base');
+    font-weight: normal;
+  }
+
+  &__title {
+    margin-top: 1.142857rem;
+    font-size: map-get($font-sizes, 'large-1');
+  }
+
+  &__price {
+    line-height: 1;
+    align-items: flex-start;
+    margin-top: 2.285714rem;
+    font-size: map-get($font-sizes, 'big-1');
+
+    span {
+      margin-left: 0.5rem;
+      font-size: map-get($font-sizes, 'large-2');
+      font-weight: 400;
+    }
+
+    @media (max-width: map-get($breakpoints, 'large-2')) {
+      font-size: map-get($font-sizes, 'large-2');
+    }
+  }
+
+  &__button {
+    margin-top: 2.285714rem;
+  }
+}

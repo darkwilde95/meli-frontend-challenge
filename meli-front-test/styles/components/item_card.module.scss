@@ -1,0 +1,43 @@
+@import '../abstracts/variables';
+
+$item-card-padding: 1.142857rem;
+
+.item_card {
+  width: 100%;
+  padding: 1.142857rem;
+  background-color: $white-background;
+
+  &__details {
+    align-items: flex-start;
+    padding: 1.142857rem;
+    width: 60%;
+  }
+
+  &__price {
+    line-height: 1;
+    align-items: flex-start;
+    margin-top: 2.285714rem;
+    font-size: map-get($font-sizes, 'large-1');
+  }
+
+  &__price_decimals {
+    margin-left: 0.25rem;
+    font-size: map-get($font-sizes, 'base');
+  }
+
+  &__shipping {
+    margin-left: 1rem;
+    height: 100%;
+  }
+
+  &__title {
+    margin-top: 2.285714rem;
+    font-size: map-get($font-sizes, 'medium-2');
+  }
+
+  &__location {
+    margin-top: 3.428571rem;
+    font-size: map-get($font-sizes, 'small');
+  }
+}
+
