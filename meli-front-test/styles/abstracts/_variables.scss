@@ -1,6 +1,7 @@
 // search bar
 $search-bar-height: 4rem;
 
+// border radius
 $button-border-radius: 4px;
 $input-border-radius: 4px;
 $image-border-radius: 4px;
@@ -24,7 +25,8 @@ $font-sizes: (
   'medium-2': 18px,
   'medium-1': 16px,
   'base': 14px,
-  'small': 12px
+  'small': 12px,
+  'x-small': 10px
 );
 
 // colors
@@ -39,3 +41,5 @@ $meli-blue: #3483FA;
 
 $white-background: #FFFFFF;
 $white-text: #FFFFFF;
+
+$green-text: #00a650;

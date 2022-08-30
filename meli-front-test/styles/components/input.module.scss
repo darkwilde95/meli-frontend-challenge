@@ -1,11 +1,13 @@
 @import '../themes/meli_theme';
 @import '../abstracts/variables';
+@import '../base/common';
 
 $input-group-height: 2.5rem;
 
 .input_group {
   height: $input-group-height;
   width: 100%;
+  @extend .flex-total-center;
 
   input {
     border-top-left-radius: $input-border-radius;
@@ -27,6 +29,7 @@ $input-group-height: 2.5rem;
     height: 100%;
     width: $input-group-height;
     cursor: pointer;
+    @extend .flex-total-center;
   }
 
   input + &__icon_right {

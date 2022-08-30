@@ -1,0 +1,33 @@
+@import '../abstracts/mixin';
+
+// Common classes to re-use
+.d-flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-total-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-container {
+  @include width-adjust(100%);
+  max-width: map-get($breakpoints, 'large-2');
+  height: 100%;
+  margin: 0 auto;
+}
+
+// Mobile devices
+@media (max-width: map-get($breakpoints, 'small')) {
+  .page-container.content {
+    margin: 0;
+    width: 100%;
+  }
+}

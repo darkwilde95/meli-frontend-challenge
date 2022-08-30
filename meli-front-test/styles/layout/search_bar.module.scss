@@ -1,13 +1,16 @@
 @import '../themes/meli_theme';
 @import '../abstracts/variables';
+@import '../base/common';
 
 .container {
   background-color: $primary-color;
   width: 100%;
   height: $search-bar-height;
   justify-content: center;
+  @extend .d-flex-row;
 }
 
 .logo {
   margin-right: 2rem;
+  @extend .flex-total-center;
 }

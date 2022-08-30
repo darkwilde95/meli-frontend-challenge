@@ -1,5 +1,6 @@
 @import '../abstracts/variables';
 @import '../themes/meli_theme';
+@import '../base/common';
 
 $img-max-width: 680px;
 
@@ -9,17 +10,11 @@ $img-max-width: 680px;
   border-radius: $card-border-radius;
   background-color: $white-background;
   margin-bottom: 2rem;
+  @extend .d-flex-column;
 
   &__buy_title {
     width: 100%;
-    @media (max-width: map-get($breakpoints, 'large-1')) {
-      flex-direction: column;
-    }
-  }
-
-  &__picture {
-    width: 680px;
-    flex-shrink: 0;
+    @extend .d-flex-row;
   }
 
   &__description {
@@ -43,11 +38,7 @@ $img-max-width: 680px;
   &__buy_container {
     flex-grow: 1;
     margin-left: 2.285714rem;
-    @media (max-width: map-get($breakpoints, 'large-1')) {
-      button {
-        width: 50%;
-      }
-    }
+    @extend .d-flex-column;
   }
 
   &__sold {
@@ -65,19 +56,47 @@ $img-max-width: 680px;
     align-items: flex-start;
     margin-top: 2.285714rem;
     font-size: map-get($font-sizes, 'big-1');
+    @extend .d-flex-row;
 
     span {
       margin-left: 0.5rem;
       font-size: map-get($font-sizes, 'large-2');
       font-weight: 400;
     }
-
-    @media (max-width: map-get($breakpoints, 'large-2')) {
-      font-size: map-get($font-sizes, 'large-2');
-    }
   }
 
   &__button {
     margin-top: 2.285714rem;
+  }
+
+  // Desktop M devices
+  @media (max-width: map-get($breakpoints, 'large-2')) {
+
+    &__price {
+      font-size: map-get($font-sizes, 'large-2');
+    }
+  }
+
+  // Tablet and Desktop S Devices
+  @media (max-width: map-get($breakpoints, 'large-1')) {
+
+    &__buy_title {
+      flex-direction: column;
+    }
+
+    &__buy_container {
+      margin: 2rem 0 0;
+      button {
+        width: 50%;
+      }
+    }
+  }
+
+  // Mobile devices
+  @media (max-width: map-get($breakpoints, 'small')) {
+    
+    &__buy_container button {
+      width: 100%;
+    }
   }
 }

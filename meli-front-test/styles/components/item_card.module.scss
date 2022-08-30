@@ -1,4 +1,5 @@
 @import '../abstracts/variables';
+@import '../base/common';
 
 $item-card-padding: 1.142857rem;
 
@@ -6,11 +7,14 @@ $item-card-padding: 1.142857rem;
   width: 100%;
   padding: 1.142857rem;
   background-color: $white-background;
+  border-radius: $card-border-radius;
+  @extend .d-flex-row;
 
   &__details {
     align-items: flex-start;
     padding: 1.142857rem;
-    width: 60%;
+    width: 80%;
+    @extend .d-flex-column;
   }
 
   &__price {
@@ -18,6 +22,7 @@ $item-card-padding: 1.142857rem;
     align-items: flex-start;
     margin-top: 2.285714rem;
     font-size: map-get($font-sizes, 'large-1');
+    @extend .d-flex-row;
   }
 
   &__price_decimals {
@@ -36,8 +41,64 @@ $item-card-padding: 1.142857rem;
   }
 
   &__location {
-    margin-top: 3.428571rem;
     font-size: map-get($font-sizes, 'small');
+    margin-top: 3.428571rem;
+    width: 20%;
+  }
+
+  &__shipping_sm {
+    display: none;
+  }
+
+  // Tablet devices
+  @media (max-width: map-get($breakpoints, 'medium')) {
+
+    padding: 0.5rem;
+
+    &__price {
+      font-weight: 500;
+      font-size: map-get($font-sizes, 'medium-2');
+    }
+
+    &__price_decimals {
+      font-weight: 500;
+      font-size: map-get($font-sizes, 'small');
+    }
+
+    &__title {
+      font-size: map-get($font-sizes, 'base');
+    }
+
+    &__location {
+      display: none;
+    }
+  }
+
+  // Mobile devices
+  @media (max-width: map-get($breakpoints, 'small')) {
+    &__price {
+      margin-top: 0;
+      font-size: map-get($font-sizes, 'medium-1');
+    }
+
+    &__price_decimals {
+      font-size: map-get($font-sizes, 'x-small');
+    }
+
+    &__title {
+      margin-top: 1rem;      
+    }
+
+    &__shipping {
+      display: none;
+    }
+
+    &__shipping_sm {
+      display: block;
+      margin-top: 0.5rem;
+      color: $green-text;
+      font-weight: 500;
+    }
   }
 }
 

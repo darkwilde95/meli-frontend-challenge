@@ -1,6 +1,5 @@
 // lib
 import Image from 'next/image'
-import classNames from 'classnames'
 
 // ts
 import priceFormatter from '../utils/priceFormatter'
@@ -19,23 +18,9 @@ const ItemCard = ({ title, picture, price, free_shipping, location }: Item) => {
   const hasDecimals = price.decimals > 0
   const decimalsFormatted = decimalFormatter(price.decimals)
 
-  const itemCard = classNames(
-    styles.item_card,
-    'd-flex-row'
-  )
-  const itemCardDetailsStyles = classNames(
-    styles.item_card__details,
-    'd-flex-column'
-  )
-
-  const itemCardPriceStyles = classNames(
-    styles.item_card__price,
-    'd-flex-row'
-  )
-
   return (
     <div 
-      className={itemCard}
+      className={styles.item_card}
       aria-label={`Articulo: ${title}`}
     >
       <Image 
@@ -44,8 +29,8 @@ const ItemCard = ({ title, picture, price, free_shipping, location }: Item) => {
         height={180}
         objectFit='contain'
       />
-      <div className={itemCardDetailsStyles}>
-        <p className={itemCardPriceStyles}>
+      <div className={styles.item_card__details}>
+        <p className={styles.item_card__price}>
           {priceFormatted}
           {hasDecimals && (
             <span className={styles.item_card__price_decimals}>
@@ -64,10 +49,13 @@ const ItemCard = ({ title, picture, price, free_shipping, location }: Item) => {
         <p className={styles.item_card__title}>
           { title }
         </p>
+        <p className={styles.item_card__shipping_sm}>
+          Envío gratis
+        </p>
       </div>
-      <div className={styles.item_card__location}>
-        {location}
-      </div>
+      <p className={styles.item_card__location}>
+        { location }
+      </p>
     </div>
   )
 }

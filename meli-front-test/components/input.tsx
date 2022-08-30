@@ -1,5 +1,4 @@
 // lib
-import classNames from 'classnames'
 import Image, { StaticImageData } from 'next/image'
 import type { 
   ChangeEventHandler, 
@@ -45,11 +44,8 @@ const Input = ({
     setValue(e.target.value)
   }
 
-  const containerStyles = classNames(styles.input_group, 'flex-total-center')
-  const iconRightStyles = classNames(styles.input_group__icon_right, 'flex-total-center')
-
   return (
-    <div className={containerStyles} style={style}>
+    <div className={styles.input_group} style={style}>
       <input 
         type={type} 
         id={id}
@@ -61,7 +57,7 @@ const Input = ({
         tabIndex={2}
       />
       {iconRight && (
-        <div className={iconRightStyles}>
+        <div className={styles.input_group__icon_right}>
           <Image
             src={iconRight}
             alt={iconRightAlt}

@@ -9,6 +9,7 @@ $divider-space: $item-card-padding + 1rem;
   margin: 0;
   margin-bottom: 2rem;
   border-radius: $card-border-radius;
+  background-color: $white-background;
 
   li {
     position: relative;
@@ -22,5 +23,16 @@ $divider-space: $item-card-padding + 1rem;
     width: calc(100% - #{$divider-space} * 2);
     background-color: $gray-background;
     margin: 0 $divider-space;
+  }
+
+  // Mobile devices
+  @media (max-width: map-get($breakpoints, 'small')) {
+    
+    margin-top: 2rem;
+
+    li:not(:last-child)::after {
+      width: calc(100% - #{$divider-space});
+      margin: 0 $divider-space / 2;
+    }
   }
 }

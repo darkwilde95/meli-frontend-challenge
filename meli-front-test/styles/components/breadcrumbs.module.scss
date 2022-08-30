@@ -1,9 +1,12 @@
 @import '../themes/meli_theme';
+@import '../abstracts/variables';
+@import '../base/common';
 
 .breadcrumbs {
   list-style: none;
   padding: 1.142857rem 0;
   font-size: map-get($font-sizes, 'base');
+  @extend .d-flex-row;
 
   &__item {
     display: inline-flex;
@@ -18,5 +21,10 @@
       font-weight: 600;
       color: $primary-color-text-light-2;
     }
+  }
+
+  // Mobile devices
+  @media (max-width: map-get($breakpoints, 'small')) {
+    display: none;
   }
 }

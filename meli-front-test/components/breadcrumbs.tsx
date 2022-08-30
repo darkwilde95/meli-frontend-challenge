@@ -10,11 +10,6 @@ type BreadcrumbsProps = {
 
 const Breadcrumbs = ({ categories }: BreadcrumbsProps) => {
 
-  const breadcrumbsStyles = classNames(
-    styles.breadcrumbs,
-    'flex-r-total-center'
-  )
-
   const breadcrumbStyles = (isLast: boolean) =>classNames({
     [styles['breadcrumbs__item']]: !isLast,
     [styles['breadcrumbs__item--last']]: isLast
@@ -28,7 +23,7 @@ const Breadcrumbs = ({ categories }: BreadcrumbsProps) => {
   )
 
   return (
-    <ul className={breadcrumbsStyles}>
+    <ul className={styles.breadcrumbs}>
       { categories.map((c, i) => breadcrumb(i, c, i === categories.length - 1))}
     </ul>
   )

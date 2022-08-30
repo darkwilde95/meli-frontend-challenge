@@ -1,7 +1,6 @@
 // lib
 import Link from 'next/link'
 import Image from 'next/image'
-import classNames from 'classnames'
 
 // assets
 import meliLogo1x from '../public/meli_logo_1x.png'
@@ -11,14 +10,11 @@ import styles from '../styles/layout/search_bar.module.scss'
 import SearchInput from './search_input'
 
 const SearchBar = () => {
-
-  const logoContainerStyles = classNames(styles.logo, 'flex-total-center')
-  const containerStyles = classNames(styles.container, 'd-flex-row')
   
   return (
-    <header className={containerStyles}>
+    <header className={styles.container}>
       <div className='page-container flex-total-center'>
-        <div className={logoContainerStyles}>
+        <div className={styles.logo}>
           <Link href='/'>
             <a tabIndex={1} aria-label='Ir al contenido principal'>
               <Image

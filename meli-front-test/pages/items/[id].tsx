@@ -1,7 +1,6 @@
 // lib
 import Head from 'next/head'
 import Image from 'next/image'
-import classNames from 'classnames'
 import { GetServerSideProps } from 'next'
 
 // ts
@@ -53,25 +52,6 @@ const ItemDetail: NextPageWithLayout<ItemDetailsProps> = ({ item }) => {
   const hasDecimals = price.decimals > 0
   const decimalsFormatted = decimalFormatter(price.decimals)
 
-  const itemDetailsStyles = classNames(
-    styles.item_details,
-    'd-flex-column'
-  )
-  const itemDetailsBuyTitleStyles = classNames(
-    styles.item_details__buy_title,
-    'd-flex-row'
-  )
-
-  const itemDetailBuyContainerStyles = classNames(
-    styles.item_details__buy_container,
-    'd-flex-column'
-  )
-
-  const itemDetailsPriceStyles = classNames(
-    styles.item_details__price,
-    'd-flex-row'
-  )
-
   const metaTags = {
     title,
     description: truncateString(description),
@@ -90,8 +70,8 @@ const ItemDetail: NextPageWithLayout<ItemDetailsProps> = ({ item }) => {
       </Head>
       <FacebookMetaTags {...metaTags} />
       <TwitterMetaTags {...metaTags} />
-      <div className={itemDetailsStyles}>
-        <div className={itemDetailsBuyTitleStyles}>
+      <div className={styles.item_details}>
+        <div className={styles.item_details__buy_title}>
           <div className={styles.item_details__picture}>
             <Image 
               src={picture}
@@ -100,7 +80,7 @@ const ItemDetail: NextPageWithLayout<ItemDetailsProps> = ({ item }) => {
               objectFit='contain'
             />
           </div>
-          <div className={itemDetailBuyContainerStyles}>
+          <div className={styles.item_details__buy_container}>
             <h5 className={styles.item_details__sold}>
               {condition === 'new' ? 'Nuevo - ' : ''}
               {`${sold_quantity} vendidos`}
@@ -108,7 +88,7 @@ const ItemDetail: NextPageWithLayout<ItemDetailsProps> = ({ item }) => {
             <h3 className={styles.item_details__title}>
               {title}
             </h3>
-            <h1 className={itemDetailsPriceStyles}>
+            <h1 className={styles.item_details__price}>
               {priceFormatted}
               {hasDecimals && (<span>{decimalsFormatted}</span>)}
             </h1>

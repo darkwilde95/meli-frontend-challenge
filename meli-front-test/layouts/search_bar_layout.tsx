@@ -11,7 +11,7 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => (
   <>
     <SearchBar />
-    <main className='page-container'>
+    <main className='page-container content'>
       { children }
     </main>
   </>

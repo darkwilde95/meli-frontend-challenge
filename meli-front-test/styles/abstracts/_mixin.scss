@@ -6,6 +6,6 @@
   }
 }
 
-@mixin max-width-adjust($width) {
-  max-width: calc(#{$width} - 4rem);
+@mixin width-adjust($width, $margin: 2rem) {
+  width: calc(#{$width} - #{$margin});
 }
